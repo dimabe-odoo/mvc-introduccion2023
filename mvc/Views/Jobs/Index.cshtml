@@ -1,0 +1,23 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model List<mvc.Models.Entities.Job>
+@{
+    ViewData["Title"] = "Listado de trabajos";
+}
+
+<div class="card">
+    <div class="card-header bg-success text-white">
+        <div class="card-title">
+            <h2>@ViewData["Title"] <a href="/jobs/create" class="btn btn-primary">Crear</a> </h2>
+        </div>
+    </div>
+    <div class="card-body">
+        @if (Model.Count > 0)
+        {
+            @Html.Partial("JobsTable")
+        }
+        else
+        {
+            @Html.Partial("NoData")
+        }
+    </div>
+</div>

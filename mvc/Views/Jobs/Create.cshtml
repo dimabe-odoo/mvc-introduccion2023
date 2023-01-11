@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Crear puesto de trabajo";
+}
+
+<form action="/jobs/save" method="post">
+    @* token de seguridad o anti falsificacion
+        esto evita los ataques csrf
+     *@
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="JobName">Nombre</label>
+        <input type="text" name="JobName" class="form-control" id="JobName" />
+    </div>
+    
+    <div class="form-group">
+        <label for="JobDescription">Descripción</label>
+        <textarea type="text" name="JobDescription" class="form-control" id="JobDescription"></textarea>
+    </div>
+    <div class="d-grid gap-2 mt-5">
+        <button type="submit" class="btn btn-success btn-block">Guardar</button>
+        <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
+    </div>
+    
+</form>
+
